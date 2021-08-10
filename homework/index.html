@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    window.onload = () => {
+      fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem", {
+        method: "GET",
+        headers: {
+          "x-rapidapi-key":
+            "22dbcb91d1msh9ea372a9e005d73p10ce78jsnacf7d5f19237",
+          "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+        },
+      })
+        .then((response) => {
+          console.log(response);
+          return response.json();
+        })
+        .then((music) => {
+          console.log(music.data);
+        });
+    };
+  </script>
+</html>

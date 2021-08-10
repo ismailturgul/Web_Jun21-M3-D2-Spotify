@@ -7,7 +7,7 @@
     <title>Document</title>
   </head>
   <body></body>
-
+  <button type="button" id="target" class="btn btn-warning">Artists</button>
   <script>
     let albums = [];
 
@@ -31,10 +31,54 @@
         });
     }
 
+    function SingleAlbum(album) {
+      return `<div id="${album.id}"
+        class="single-album col-12 col-sm-4 col-lg-2 py-2 py-md-1 px-1 d-flex"
+        style="justify-content: center; flex-direction: column"
+      >
+        <img
+          class="img-fluid"
+          src="${album.cover}"
+          alt="album"
+          style="width: 100%"
+        />
+        <a
+          href="./artistPlusSidebar.html"
+          style="
+            display: flex;
+            text-decoration: none;
+            color: white;
+            justify-content: center;
+            width: 100%;
+            margin-top: 5px;
+            font-weight: 500;
+          "
+          >${album.title}</a
+        >
+      </div>`;
+    }
+    function AlbumsRow(title, albumsHTML) {
+      return `<div class="albums mt-5">
+        <h2 class="mb-3 pl-5">${title}</h2>
+        <div
+          class="album-cover d-flex px-5"
+          style="
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            align-items: center;
+          "
+        >
+           ${albumsHTML}
+      </div>
+    `;
+    }
+
     window.onload = function () {
-      artists("eminem");
-      artists("metallica");
-      artists("behemoth");
+      //artists("eminem");
+      //artists("metallica");
+      //artists("behemoth");
+      const targetButton = document.querySelector("#target");
+      targetButton.addEventListener("click", function () {});
     };
   </script>
 </html>

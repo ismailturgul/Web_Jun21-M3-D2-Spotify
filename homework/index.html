@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container" id="content"></div>
+  </body>
   <button type="button" id="target" class="btn btn-warning">Artists</button>
   <script>
     let albums = [];
@@ -79,6 +81,15 @@
       //artists("behemoth");
       const targetButton = document.querySelector("#target");
       targetButton.addEventListener("click", function () {});
+      let content = document.querySelector("#content");
+      let contentHTML = "";
+      albums.forEach((artistAlbum) => {
+        const title = artistAlbum.title;
+        const data = artistAlbum.albums;
+        contentHTML += AlbumsRow(title, "");
+      });
+      content.innerHTML = contentHTML;
+      console.log(albums);
     };
   </script>
 </html>
